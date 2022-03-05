@@ -6,7 +6,7 @@
   "default": "index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build index.html --public-url ./",
+    "build": "parcel build src/index.html --public-url ./",
     "tailwind": "npx tailwindcss -i ./src/index.css -o ./dist/index.css --watch --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
