@@ -6,7 +6,7 @@
   "default": "index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build src/index.html --public-url ./",
+    "build": "parcel build",
     "tailwind": "npx tailwindcss -i ./src/index.css -o ./dist/index.css --watch --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,6 +30,6 @@
     "autoprefixer": "^10.4.2",
     "parcel": "^2.2.1",
     "postcss": "^8.4.7",
-    "tailwindcss": "^3.0.18"
+    "tailwindcss": "^3.0.23"
   }
 }
