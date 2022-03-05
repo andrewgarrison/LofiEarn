@@ -46,7 +46,6 @@ export const DepositModal = ({ isOpen, onClose }: Props) => {
   useTx(txHash, {
     onSuccess: (data) => {
       queryClient.invalidateQueries(QUERY_KEYS.EARN);
-      console.log(data);
       setStage("SUCCESS");
     },
     onError: () => setStage("ERROR"),
