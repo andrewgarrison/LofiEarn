@@ -30,8 +30,10 @@ export const DepositModal = ({ isOpen, onClose }: Props) => {
     enabled: isLoaded,
     refetchInterval: false,
   });
+  const maxDeposit = (balance - Number(gasPrice.uusd) * 2).toFixed(3);
   const futureTxWarning = useMemo(
-    () => !isLoading && Number(value) > balance - Number(gasPrice?.uusd),
+    () =>
+      !isLoading && Number(value) > Number(maxDeposit) - Number(gasPrice?.uusd),
     [isLoading, value, balance]
   );
 
@@ -44,7 +46,7 @@ export const DepositModal = ({ isOpen, onClose }: Props) => {
   }, [data]);
 
   useTx(txHash, {
-    onSuccess: (data) => {
+    onSuccess: () => {
       queryClient.invalidateQueries(QUERY_KEYS.EARN);
       setStage("SUCCESS");
     },
@@ -150,9 +152,9 @@ export const DepositModal = ({ isOpen, onClose }: Props) => {
                 ) : (
                   <span
                     className="underline cursor-pointer"
-                    onClick={() => setValue(balance as UST)}
+                    onClick={() => setValue(maxDeposit as UST)}
                   >
-                    {balance} UST
+                    {maxDeposit} UST
                   </span>
                 )}
               </div>
@@ -176,14 +178,14 @@ export const DepositModal = ({ isOpen, onClose }: Props) => {
             )}
             {futureTxWarning && (
               <div className="text-sm font-medium text-red-500 dark:text-red-300">
-                {Number(value) > Number(balance)
-                  ? "You do not have enough UST in your account to complete the desired transaction."
+                {Number(value) > Number(maxDeposit)
+                  ? "You do not have enough UST to complete the desired transaction."
                   : "Leaving less UST in your account may lead to insufficient transaction fees for future transactions."}
               </div>
             )}
             <Button
               disabled={
-                !value || Number(value) > Number(balance) || Number(value) <= 0
+                !value || Number(value) > Number(maxDeposit) || Number(value) <= 0
               }
               className="w-full"
               variant={futureTxWarning ? "danger" : "primary"}
