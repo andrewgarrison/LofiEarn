@@ -21,7 +21,7 @@ export const TipModal = ({ isOpen, onClose }: Props) => {
     enabled: isLoaded,
     refetchInterval: false,
   });
-  const maxDeposit = (balance - Number(gasPrice.uusd) * 2).toFixed(3);
+  const maxDeposit = (balance - Number(gasPrice?.uusd) * 2).toFixed(3);
   const futureTxWarning = useMemo(
     () =>
       !isLoading && Number(value) > Number(maxDeposit) - Number(gasPrice?.uusd),
