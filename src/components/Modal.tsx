@@ -23,9 +23,9 @@ export const Modal = ({ isOpen, onClose, children }: Props) => {
         aria-hidden="true"
         className={`${
           isOpen ? "flex" : "hidden"
-        } overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-start h-modal md:h-full md:inset-0 pt-48`}
+        } overflow-y-auto overflow-x-hidden fixed right-0 left-0 z-50 justify-center items-center h-full`}
       >
-        <div className="relative px-4 w-full max-w-md h-full md:h-auto">
+        <div className="relative px-4 w-full max-w-md h-auto">
           <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div className="flex justify-end p-2">
               <button

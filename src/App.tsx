@@ -21,8 +21,8 @@ export function App() {
     <div>
       <Navbar />
       <div style={bgStyles}>
-        <div className="container mx-auto flex items-center justify-center h-[60vh] flex-col">
-          {balanceDisplay}
+        <div className="container mx-auto flex items-center justify-center h-[60vh] flex-col px-4">
+          <div className="text-center">{balanceDisplay}</div>
           {status === WalletStatus.WALLET_CONNECTED && (
             <>
               <div className="flex gap-4 items-center mt-2">
