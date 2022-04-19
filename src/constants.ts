@@ -21,8 +21,8 @@ export const soundcloudTracks: string[] = [
 ];
 export const backgroundImages: string[] = [
   // commented out images are ideal, but we don't have permission to use.
-  "https://images.unsplash.com/photo-1627307346808-eb441d0d1076?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2728&q=80",
-  // "https://cdnb.artstation.com/p/assets/images/images/029/320/295/original/bogdan-mb0sco-coffeeanim.gif?1601147277",
+  // "https://images.unsplash.com/photo-1627307346808-eb441d0d1076?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2728&q=80",
+  "https://cdnb.artstation.com/p/assets/images/images/029/320/295/original/bogdan-mb0sco-coffeeanim.gif?1601147277",
   // "https://wallpaperaccess.com/full/6502071.gif",
   // "https://cdna.artstation.com/p/assets/images/images/022/521/258/original/bogdan-mb0sco-coffee-shop-animationfullhd.gif?1575731432",
   // "https://cdna.artstation.com/p/assets/images/images/032/575/904/large/bogdan-mb0sco-room-night-16x9-hd.jpg?1606845109",
